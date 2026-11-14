@@ -11,6 +11,7 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **The Hierarchy of Trust: Production Prompt Guardrails & Multi-Turn Jailbreak Defense** | 📑 **9 Pages** (Dense PDF) | **OWASP Top 10 for LLMs (LLM01 / LLM02)**<br/>**NIST AI 100-1**<br/>**MITRE ATLAS** | • 6-Layer Token Authority Stratification<br/>• Dual-Model Sandwiched Context Extraction<br/>• Allowlist AST Security Visitor<br/>• Pydantic Schema-Constrained Token Decoding<br/>• Envoy gRPC ExtAuthz Architecture | [📖 Markdown Spec](blueprints/prompt_guardrails_jailbreak_defense_blueprint.md)<br/>[📑 9-Page Master PDF](https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/prompt_guardrails_jailbreak_defense_blueprint.pdf)<br/>[📱 Mobile Google Viewer](https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/prompt_guardrails_jailbreak_defense_blueprint.pdf) |
 | **Cloudflare 6-Phase AI Security Audit Blueprint** | 📑 **9 Pages** (Dense PDF) | **Decoupled Verification Axiom**<br/>**First.org CVSS v3.1** | • Finder $\neq$ Verifier Architectural Decoupling<br/>• AST Codebase Attack Surface Reconnaissance<br/>• Adversarial Disprove Engine (Defense Attorney LLM)<br/>• Ephemeral Rootless Docker Sandbox Runner<br/>• Differential AST Syntax Invariance Locks | [📖 Markdown Spec](blueprints/cloudflare_security_audit_blueprint.md)<br/>[📑 9-Page Master PDF](https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/cloudflare_security_audit_blueprint.pdf)<br/>[📱 Mobile Google Viewer](https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/cloudflare_security_audit_blueprint.pdf) |
+| **Closed-Loop AI Evaluation Harness: Autonomous Agent Trajectory Testing & Rootless Sandbox Architecture** | 📑 **9 Pages** (Dense PDF) | **ISO/IEC 42001 (Clause 9.1)**<br/>**NIST AI 100-1 (Measure 2.4)**<br/>**Princeton SWE-bench**<br/>**UK AISI Inspect AI** | • 4-Tier Stratified Evaluation Taxonomy<br/>• Ephemeral Rootless Docker Sandbox (--network none)<br/>• OpenInference Trajectory Semantic Tracing<br/>• Deterministic State Diff & AST Assertion Gate<br/>• DSPy MIPROv2 Closed-Loop Prompt Optimization | [📖 Markdown Spec](blueprints/closed_loop_ai_evaluation_harness_blueprint.md)<br/>[📑 9-Page Master PDF](https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/closed_loop_ai_evaluation_harness_blueprint.pdf)<br/>[📱 Mobile Google Viewer](https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/vyas-1234/aiarchitect-vault@main/blueprints/closed_loop_ai_evaluation_harness_blueprint.pdf) |
 
 ---
 
@@ -80,3 +81,18 @@ class SecureDatabaseAction(BaseModel):
 ---
 
 *Maintained by [@aiarchitect.io](https://instagram.com/aiarchitect.io) Systems Research Laboratory.*
+
+### 3. Closed-Loop Agent Trajectory Invariant (SWE-bench & ISO 42001 Grade)
+> *"An agent cannot grade its own trajectory, and text similarity cannot verify system state. Production evaluation requires deterministic execution invariants, rootless sandbox isolation, and closed-loop regression telemetry."*
+
+```python
+# Deterministic Trajectory State Diff Verification Gate
+class TrajectoryStepAssertion:
+    def verify_step(self, tool_name: str, params: dict, pre_hash: str, workspace_path: str) -> bool:
+        if tool_name not in ALLOWED_AGENT_TOOLS:
+            raise PermissionError(f"Security Gate: Unauthorized tool '{tool_name}' invoked.")
+        post_hash = EnvironmentSnapshot.compute_dir_hash(workspace_path)
+        if tool_name == "read_only_query" and pre_hash != post_hash:
+            raise AssertionError("State Mutation Invariant Violated: Read-only tool altered workspace state.")
+        return True
+```
