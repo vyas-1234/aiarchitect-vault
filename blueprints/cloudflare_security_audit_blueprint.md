@@ -126,6 +126,19 @@ Benchmarking across 12 enterprise microservice repositories demonstrated a trans
 | Engineer Alert Noise | High (Ignored in Slack) | Extreme (Floods PRs) | Zero (Only Actionable PRs) |
 | Mean Time to Patch | 14.2 Days | 6.5 Days | 42 Minutes (Automated AST) |
 
+## Phase 9: Intellectual Property, Licensing & Coordinated Disclosure Policy
+<b>Copyright © 2026 aiarchitect.io Systems Research Laboratory. All rights reserved.</b>
+
+This specification is protected under international copyright treaties. Permission is granted to implement the architectures described herein for internal production use. Unaltered redistribution with explicit author attribution to @aiarchitect.io is permitted.
+
+All code implementations and AST parsers are licensed under the Apache License, Version 2.0. AI red-teaming vectors adhere to Coordinated Vulnerability Disclosure guidelines. Subscriber information is handled with zero third-party data sharing.
+
+| Policy Domain | Governing Standard | Authorized Scope | Contact |
+| --- | --- | --- | --- |
+| Architecture Blueprints | Copyright © 2026 | Internal Use & Engineering Reference | research@aiarchitect.io |
+| AST & Docker Code | Apache License 2.0 | Open Modification & Commercial Integration | legal@aiarchitect.io |
+| Security Disclosures | ISO/IEC 29147:2018 | Coordinated Ephemeral Sandboxes Only | security@aiarchitect.io |
+
 
 ---
 *Published by [@aiarchitect.io](https://aiarchitect.io) Systems Research Laboratory.*
