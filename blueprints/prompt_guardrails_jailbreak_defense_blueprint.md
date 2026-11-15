@@ -123,7 +123,7 @@ To prevent adding latency to production agent loops, the Guardrails Engine integ
 
 The external authorization service (written in Python/Rust) performs input schema verification, ChatML token escaping, and AST auditing in under 5 milliseconds prior to forwarding requests to backend model clusters.
 
-```python
+```yaml
 # Envoy HTTP Filter gRPC External Authorization Configuration
 http_filters:
 - name: envoy.filters.http.ext_authz
