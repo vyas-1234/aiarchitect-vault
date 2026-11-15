@@ -119,7 +119,7 @@ Deploying world models at enterprise scale requires unified scene description st
 
 Production world model architectures standardize on <b>Pixar OpenUSD (Universal Scene Description)</b> for multi-modal 3D scene representation, deployed as distributed Kubernetes microservices running on NVIDIA H100/B200 clusters backed by Ray Core.
 
-```python
+```yaml
 # Kubernetes World Simulator Distributed Cluster Manifest
 apiVersion: apps/v1
 kind: Deployment
