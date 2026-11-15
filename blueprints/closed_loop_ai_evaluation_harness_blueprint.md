@@ -36,7 +36,7 @@ Testing untrusted agent code or dynamic tool execution requires strict virtualiz
 
 Production harnesses spin up an <b>ephemeral rootless container</b> per trajectory step. Containers are created with dropped capabilities, disabled networking, a read-only root filesystem, and strict memory/CPU limits.
 
-```python
+```bash
 # Ephemeral Rootless Docker Execution Boundary
 docker run --rm \
   --user 10001:10001 \
@@ -145,7 +145,7 @@ In high-throughput enterprise deployments, running thousands of isolated traject
 
 The harness deploys as a Kubernetes Controller that provisions sandboxes backed by <b>gVisor (`runsc`)</b> or <b>Firecracker microVMs</b>. This ensures kernel-level hardware virtualization isolation for untrusted agent code execution.
 
-```python
+```yaml
 # Kubernetes Agent Evaluation Sandbox Job Manifest (gVisor runsc)
 apiVersion: batch/v1
 kind: Job
